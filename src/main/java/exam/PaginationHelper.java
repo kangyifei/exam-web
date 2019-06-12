@@ -50,23 +50,21 @@ public class PaginationHelper<I> {
      * 如果pageIndex为非法值则返回-1
      */
     public int pageItemCount(int pageIndex) {
-//        if(pageIndex>pageCount || pageIndex<0){
-//            return -1;
-//        }else {
-//            if(oneMorePage){
-//                if(pageIndex==pageCount){
-//                    return itemsCount-(pageCount-1)*itemsPerPage;
-//                }
-//                else {
-//                    return itemsPerPage;
-//                }
-//            }
-//            else {
-//                return itemsPerPage;
-//            }
-//        }
-
-return 0;
+        if(pageIndex>pageCount-1 || pageIndex<0){
+            return -1;
+        }else {
+            if(oneMorePage){
+                if(pageIndex==pageCount-1){
+                    return itemsCount-(pageCount-1)*itemsPerPage;
+                }
+                else {
+                    return itemsPerPage;
+                }
+            }
+            else {
+                return itemsPerPage;
+            }
+        }
     }
 
     /**
